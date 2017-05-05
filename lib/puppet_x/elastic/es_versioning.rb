@@ -15,6 +15,7 @@ module Puppet_X
         opt_flag = opt_flag is_post_v5
 
         opts.delete 'work' if is_post_v5
+        opts.delete 'home' if is_post_v5
 
         [opt_flag, opts.map{ |k, v| "-#{opt_flag}default.path.#{k}=${#{v}}" }.sort]
       end
